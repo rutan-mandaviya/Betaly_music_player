@@ -2,7 +2,8 @@ import config from "../config/config.js";
 import jwt from "jsonwebtoken";
 
 export default async function authMidllware(req, res, next) {
-  const token = req.cookies.token;
+  const token = req.cookies?.token || req.headers.authorization?.split(" ")[1];
+
   if (!token)
     return res.status(401).json({
       message: "No token provided!!",

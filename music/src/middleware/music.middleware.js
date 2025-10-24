@@ -3,7 +3,8 @@ import config from "../config/config.js";
 
 export async function authArtistMiddleware(req, res, next) {
   try {
-    const token = req.cookies?.token; // safe optional chaining
+    const token =
+      req.cookies?.token || req.headers.authorization?.split(" ")[1];
 
     if (!token) {
       return res
@@ -29,7 +30,8 @@ export async function authArtistMiddleware(req, res, next) {
 }
 export async function userMiddleware(req, res, next) {
   try {
-    const token = req.cookies?.token; // safe optional chaining
+    const token =
+      req.cookies?.token || req.headers.authorization?.split(" ")[1];
 
     if (!token) {
       return res
