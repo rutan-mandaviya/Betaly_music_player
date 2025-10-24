@@ -7,7 +7,7 @@ import {
 } from "../reducers/ArtistSlice";
 
 const baseUrl = "https://betaly-music-player-1.onrender.com/api/music";
- // backend base route
+// backend base route
 
 // 🎵 1️⃣ Get All Music Uploaded by This Artist
 export const asyncGetArtistMusics = () => async (dispatch) => {
@@ -35,7 +35,6 @@ export const asyncUploadMusic = (formData) => async (dispatch) => {
 
     const { data } = await axios.post(`${baseUrl}/upload`, formData, {
       withCredentials: true,
-      headers: { "Content-Type": "multipart/form-data" },
     });
 
     toast.success(data.message || "Music uploaded successfully 🚀");
