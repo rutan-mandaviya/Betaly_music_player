@@ -6,7 +6,8 @@ import {
   SetLoading,
 } from "../reducers/ArtistSlice";
 
-const baseUrl = "http://localhost:3002/api/music"; // backend base route
+const baseUrl = "https://betaly-music-player-1.onrender.com/api/music";
+ // backend base route
 
 // 🎵 1️⃣ Get All Music Uploaded by This Artist
 export const asyncGetArtistMusics = () => async (dispatch) => {

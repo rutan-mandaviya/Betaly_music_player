@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import { Loadmusics, Loadplaylists, SetLoading } from "../reducers/MusicSlice";
 import axios from "axios";
 
-const baseUrl = "http://localhost:3002/api/music";
+const baseUrl = "https://betaly-music-player-1.onrender.com/api/music";
 
 // ✅ Load all music
 export const asyncLoadMusic = () => async (dispatch) => {

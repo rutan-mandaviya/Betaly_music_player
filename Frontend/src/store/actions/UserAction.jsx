@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import { Loaduser, removeuser } from "../reducers/Userslic";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000/api/auth";
+const BASE_URL = "https://betaly-music-player.onrender.com/api/auth";
 
 export const asyncCurrentUser = () => async (dispatch) => {
   try {
@@ -21,7 +21,7 @@ export const asyncLogoutuser = (navigate) => async (dispatch) => {
   try {
     await axios.post(`${BASE_URL}/logout`, {}, { withCredentials: true });
     dispatch(removeuser());
-    navigate('/')
+    navigate("/");
     toast.success("Logged out successfully");
   } catch (error) {
     toast.error(error.message);
