@@ -2,7 +2,6 @@ import React, { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import { Loader } from "../Components/Loader"; // optional spinner
-import Lenis from "@studio-freight/lenis";
 
 // Lazy load pages
 const Home = lazy(() => import("../pages/Home"));

@@ -94,7 +94,8 @@ const Login = ({ onClose }) => {
         {/* Google Button */}
         <button
           onClick={() => {
-            window.location.href = "http://localhost:3000/api/auth/google";
+            window.location.href =
+              "https://betaly-music-player-frontend.onrender.com/api/auth/google";
           }}
           className="flex items-center justify-center gap-2 border border-gray-300 bg-lime-50 hover:bg-gray-100 text-gray-700 font-medium py-2 w-full rounded-md shadow-sm transition mb-4"
         >

@@ -8,7 +8,7 @@ import musicRoutes from "./routes/music.route.js";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://betaly-music-player-frontend.onrender.com",
     credentials: true,
   })
 );

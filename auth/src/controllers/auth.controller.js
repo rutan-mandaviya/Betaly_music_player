@@ -84,7 +84,7 @@ export async function googleAuth(req, res) {
     );
 
     res.cookie("token", token);
-    return res.redirect("http://localhost:5173");
+    return res.redirect("https://betaly-music-player-frontend.onrender.com");
   }
 
   const Newuser = await userModel.create({
@@ -114,7 +114,7 @@ export async function googleAuth(req, res) {
   });
 
   res.cookie("token", token);
-  return res.redirect("http://localhost:5173");
+  return res.redirect("https://betaly-music-player-frontend.onrender.com");
 }
 
 export async function login(req, res) {

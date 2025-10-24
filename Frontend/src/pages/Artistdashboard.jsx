@@ -13,7 +13,10 @@ import {
   CheckCircle,
   ListPlus,
 } from "lucide-react";
-import { asyncUploadMusic } from "../store/actions/ArtistAction";
+import {
+  asyncCreatePlaylist,
+  asyncUploadMusic,
+} from "../store/actions/ArtistAction";
 import { Link } from "react-router-dom";
 
 // 🎵 Upload Music Modal Component
@@ -179,6 +182,7 @@ const UploadMusicModal = ({ isOpen, onClose, onUploaded }) => {
 };
 
 const CreatePlaylistModal = ({ isOpen, onClose, onCreated }) => {
+  const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(false);
   const artistMusics = useSelector(
@@ -205,11 +209,7 @@ const CreatePlaylistModal = ({ isOpen, onClose, onCreated }) => {
 
     try {
       setLoading(true);
-      const res = await axios.post(
-        "http://localhost:3002/api/music/create-playlist",
-        payload,
-        { withCredentials: true }
-      );
+      const res = dispatch(asyncCreatePlaylist(payload));
       toast.success("✅ Playlist Created Successfully!");
       onCreated?.(res.data);
       reset();
