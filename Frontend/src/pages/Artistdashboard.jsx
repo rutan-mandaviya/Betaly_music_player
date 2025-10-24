@@ -295,12 +295,9 @@ const CreatePlaylistModal = ({ isOpen, onClose, onCreated }) => {
   );
 };
 
-// export default CreatePlaylistModal;
-
 // 🎤 Main Artist Dashboard
 const ArtistDashboard = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [uploadOpen, setUploadOpen] = useState(false);
+  const [uploadOpen, setUploadOpen] = useState(false); // ✅ fixed state
   const [playlistOpen, setPlaylistOpen] = useState(false);
   const user = useSelector((state) => state.userReducer.user);
   console.log("user", user);
@@ -337,7 +334,7 @@ const ArtistDashboard = () => {
           </button>
 
           <button
-            onClick={() => setUploadOpen(true)}
+            onClick={() => setUploadOpen(true)} // ✅ fixed state
             className="flex items-center justify-center gap-2 text-xs sm:text-sm bg-gradient-to-br from-white via-lime-50 to-green-100 border border-lime-400 px-4 py-2 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all w-full sm:w-auto"
           >
             <Upload size={18} />
@@ -370,8 +367,8 @@ const ArtistDashboard = () => {
           className="h-[42vh] overflow-x-auto grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5"
         >
           {artistmusic
-            ?.slice() // copy array to avoid mutating redux state
-            .sort((a, b) => new Date(b.created) - new Date(a.created)) // newest first
+            ?.slice()
+            .sort((a, b) => new Date(b.created) - new Date(a.created))
             .map((n) => (
               <Link
                 to={`/musics/${n._id}`}
@@ -450,8 +447,8 @@ const ArtistDashboard = () => {
 
       {/* Upload Music Modal */}
       <UploadMusicModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
+        isOpen={uploadOpen} // ✅ fixed
+        onClose={() => setUploadOpen(false)}
         onUploaded={() => {}}
       />
       <CreatePlaylistModal
