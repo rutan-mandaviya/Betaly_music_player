@@ -26,7 +26,8 @@ passport.use(
     {
       clientID: _config.CLIENT_ID,
       clientSecret: _config.CLIENT_SECRET,
-      callbackURL: "/api/auth/google/callback",
+      callbackURL:
+        "https://betaly-music-player.onrender.com/api/auth/google/callback",
     },
     (accessToken, refrshToken, profile, done) => {
       return done(null, profile);
