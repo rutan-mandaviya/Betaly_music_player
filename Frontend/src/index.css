@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+body,html{
+  font-family: 'outfit';
+  
+
+}
+
+/* Hide scrollbar but allow scrolling */
+#artistmusicScroolbar {
+
+  overflow-x: auto;       /* horizontal scroll */
+  
+  scrollbar-width: none;  /* for Firefox */
+  
+}
+
+.playlistscrooler{
+  scrollbar-width: none;
+}
